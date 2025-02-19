@@ -8,6 +8,7 @@ repositories {
 
 dependencies {
     testImplementation(libs.junit.jupiter)
+    testImplementation("org.hamcrest:hamcrest:2.2")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
     implementation(libs.guava)
 }
