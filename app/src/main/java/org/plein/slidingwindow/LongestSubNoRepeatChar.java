@@ -1,56 +1,31 @@
 package org.plein.slidingwindow;
 
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.HashMap;
+import java.util.Map;
 
 public class LongestSubNoRepeatChar {
     
+    /**
+     * https://leetcode.com/problems/longest-substring-without-repeating-characters/
+     * 
+     * Iterate over each element from left to right.
+     * We keep track of each char last apearance. 
+     * If we find a duplicated. We move the pointer to the following position of the last appearance. 
+     * Or we leave at it is we is before the current pointer position.
+     * Each iteration we calculate the distance between the pointer and current position.
+     */
     public int lengthOfLongestSubstring(String s) {
-        
-        if (s.length() == 0) {
-            return 0;
-        }
-
-        int left = 0;
-        int right = 0;
-        int max = 1;
-
-
-        Set<Character> current = new HashSet<>();
-
-        while (right < s.length()) {
-            if (current.add(s.charAt(right))) {
-                right++;
-            } else {
-                max = Math.max(max, right - left);
-                current.remove(s.charAt(left));
-                left++;
+        Map<Character, Integer> charMap = new HashMap<>();
+        int pointer = 0;
+        int maxLength = 0;
+        for (int i = 0; i < s.length(); i++) {
+            Integer prev = charMap.put(s.charAt(i), i);
+            if (prev != null) {
+                pointer = Math.max(pointer, prev + 1);
             }
+            maxLength = Math.max(maxLength, i - pointer + 1);
         }
-
-       
-        return Math.max(max, right - left);
+        return maxLength;
     }
 
-    private int getStartWindowSize(String s) {
-        Set<Character> seen = new HashSet<>();
-        seen.add(s.charAt(0));
-        
-        int max = 1;
-        int current = 1;
-
-        for (int i = 1; i < s.length(); i++) {
-            if (!seen.add(s.charAt(i))) {
-                // Start again
-                max = Math.max(max, current);
-                seen = new HashSet<>();
-                seen.add(s.charAt(i));
-                current = 1;
-            } else {
-                current++;
-            }
-        }
-        return Math.max(max, current);
-    }
 }

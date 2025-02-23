@@ -16,9 +16,9 @@ public class LongestSubNoRepeatCharTest {
     
     @Test
     void testbase() {
-        // assertEquals(3, longestSubNoRepeatChar.lengthOfLongestSubstring("abcabcbb"));
-        // assertEquals(1, longestSubNoRepeatChar.lengthOfLongestSubstring("bbbb"));
-        // assertEquals(3, longestSubNoRepeatChar.lengthOfLongestSubstring("pwwkew"));
+        assertEquals(3, longestSubNoRepeatChar.lengthOfLongestSubstring("abcabcbb"));
+        assertEquals(1, longestSubNoRepeatChar.lengthOfLongestSubstring("bbbb"));
+        assertEquals(3, longestSubNoRepeatChar.lengthOfLongestSubstring("pwwkew"));
         assertEquals(3, longestSubNoRepeatChar.lengthOfLongestSubstring("dvdf"));
     }
 }
