@@ -1,13 +1,17 @@
 package org.plein.maps;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 public class BuddyStrings {
 
-
+    /**
+     * https://leetcode.com/problems/buddy-strings/
+     * 
+     * When the strings are equal que need to verify that there is a duplicated char to make the swap possible.
+     * When they are different, we iterate over them until we find two different chars. If there are more, there is no solution.
+     * If swaping make them the same, we return true.
+     */
     public boolean buddyStrings(String s, String goal) {
         if (s.length() != goal.length() || s.length() < 2) {
             return false;

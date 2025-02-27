@@ -28,7 +28,7 @@ public class CourseSchedule {
 
         // List<Integer> solution = new ArrayList<>(); In case we want to return the list of courses and not only true or false
         int coursesDone = 0;
-        Stack<Integer> queue = new Stack();
+        Stack<Integer> queue = new Stack<Integer>();
 
         // Find all courses unblocked and add to the queue
         for (int i = 0; i < numCourses; i++) {

@@ -12,15 +12,15 @@ import java.util.TreeMap;
 
 public class KClosestPoints {
     
-    private Object[] array;
-
     /**
      * https://leetcode.com/problems/k-closest-points-to-origin/description/
      * 
      * Depending on K we can use one approach or another.
      * When k is bigger than n/2, use a simple Arrays sort with comparator.
      * When k is smaller, use a PriorityQueue, important to keep removing elements from the 
-     * queue when there are already k, to make inserts faster.
+     * queue when there are already k, to make inserts faster. Also we have to sort in descending order, 
+     * to be able to remove the further elements using poll. Result doesn't care about the order, so we can just
+     * poll the k elements from the queue and we will return from further to closer.
      */
     public int[][] kClosest(int[][] points, int k) {
 
