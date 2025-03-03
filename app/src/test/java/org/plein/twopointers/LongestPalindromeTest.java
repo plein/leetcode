@@ -14,5 +14,6 @@ public class LongestPalindromeTest {
         assertEquals("a", new LongestPalindrome().longestPalindrome("a"));
         assertEquals("abcba", new LongestPalindrome().longestPalindrome("abcba"));
         assertEquals("abba", new LongestPalindrome().longestPalindrome("abba"));
+        assertEquals("jffj", new LongestPalindrome().longestPalindrome("dqlvtrcystnncxjffjrkiiqgtcunbwntqrpqkjepzbxzodeckrbrwzjjuptloypmjgbwioqtjzjjgqpaemgvxkapjgbfhhwltvtqgkozuzvlwetftjeocjqrdwlhdwtgzdhwvmuhvmdpkxnzrrizjntxbbpzwtjryecgfajolalwdzxqtknvvvaxuhanzowlbwjraigvrflcqoormbeexekmqpmuuobseumctsiwhvdohywjaylixqgqookgneokebtmoyaspnzbwqzffyocvcylcjobnzbmhsdprzrgdlyzuutyuwygzeldfewicjnukguisceeopckkoviayrcqanzsryhwqhxjxcpiejojztrxad"));
     }
 }
